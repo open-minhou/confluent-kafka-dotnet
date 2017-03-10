@@ -16,6 +16,9 @@
 
 using System;
 using System.Text;
+#if fx45
+using RunTimeMarshal = System.Runtime.InteropServices.Marshal;
+#endif
 
 
 namespace Confluent.Kafka.Internal
@@ -41,6 +44,38 @@ namespace Confluent.Kafka.Internal
                 System.Runtime.InteropServices.Marshal.Copy(strPtr, strBuffer, 0, length);
                 return Encoding.UTF8.GetString(strBuffer);
             }
+
+#if fx45
+            public static int SizeOf<T>()
+            {
+                return RunTimeMarshal.SizeOf(typeof(T));
+            }
+
+            public static T PtrToStructure<T>(IntPtr ptr)
+            {
+                return (T)RunTimeMarshal.PtrToStructure(ptr, typeof(T));
+            }
+
+            public static void Copy(IntPtr source, int[] destination, int startIndex, int length)
+            {
+                RunTimeMarshal.Copy(source, destination, startIndex, length);
+            }
+
+            public static void Copy(IntPtr source, byte[] destination, int startIndex, int length)
+            {
+                RunTimeMarshal.Copy(source, destination, startIndex, length);
+            }
+
+            public static void WriteInt64(IntPtr ptr, int ofs, long val)
+            {
+                RunTimeMarshal.WriteInt64(ptr, ofs, val);
+            }
+
+            public static IntPtr OffsetOf<T>(string fieldName)
+            {
+                return RunTimeMarshal.OffsetOf(typeof(T), fieldName);
+            }
+#endif
         }
     }
 }

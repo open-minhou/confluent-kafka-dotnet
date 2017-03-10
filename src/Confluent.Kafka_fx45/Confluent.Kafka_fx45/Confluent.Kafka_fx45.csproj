@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\librdkafka.redist.0.9.4\build\librdkafka.redist.props" Condition="Exists('..\packages\librdkafka.redist.0.9.4\build\librdkafka.redist.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C7E2A319-80F1-4CA4-8347-E6D153E78437}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Confluent.Kafka</RootNamespace>
+    <AssemblyName>Confluent.Kafka</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;fx45</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Confluent.Kafka\BrokerMetadata.cs">
+      <Link>BrokerMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\CommittedOffsets.cs">
+      <Link>CommittedOffsets.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Consumer.cs">
+      <Link>Consumer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Error.cs">
+      <Link>Error.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\ErrorCode.cs">
+      <Link>ErrorCode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\GroupInfo.cs">
+      <Link>GroupInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\GroupMemberInfo.cs">
+      <Link>GroupMemberInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\IDeliveryHandler.cs">
+      <Link>IDeliveryHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Impl\LibRdKafka.cs">
+      <Link>Impl\LibRdKafka.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Impl\Metadata.cs">
+      <Link>Impl\Metadata.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Impl\SafeConfigHandle.cs">
+      <Link>Impl\SafeConfigHandle.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Impl\SafeHandleZeroIsInvalid.cs">
+      <Link>Impl\SafeHandleZeroIsInvalid.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Impl\SafeKafkaHandle.cs">
+      <Link>Impl\SafeKafkaHandle.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Impl\SafeTopicConfigHandle.cs">
+      <Link>Impl\SafeTopicConfigHandle.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Impl\SafeTopicHandle.cs">
+      <Link>Impl\SafeTopicHandle.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Internal\Extensions\TimeSpan.cs">
+      <Link>Internal\Extensions\TimeSpan.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Internal\SafeDictionary.cs">
+      <Link>Internal\SafeDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Internal\Util.cs">
+      <Link>Internal\Util.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\ISerializingProducer.cs">
+      <Link>ISerializingProducer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\KafkaException.cs">
+      <Link>KafkaException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Library.cs">
+      <Link>Library.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Loggers.cs">
+      <Link>Loggers.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\LogMessage.cs">
+      <Link>LogMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Message.cs">
+      <Link>Message.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Metadata.cs">
+      <Link>Metadata.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Null.cs">
+      <Link>Null.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Offset.cs">
+      <Link>Offset.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\PartitionMetadata.cs">
+      <Link>PartitionMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Producer.cs">
+      <Link>Producer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Serialization\Extensions\Message.cs">
+      <Link>Serialization\Extensions\Message.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Serialization\IDeserializer.cs">
+      <Link>Serialization\IDeserializer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Serialization\IntDeserializer.cs">
+      <Link>Serialization\IntDeserializer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Serialization\IntSerializer.cs">
+      <Link>Serialization\IntSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Serialization\ISerializer.cs">
+      <Link>Serialization\ISerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Serialization\NullDeserializer.cs">
+      <Link>Serialization\NullDeserializer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Serialization\NullSerializer.cs">
+      <Link>Serialization\NullSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Serialization\StringDeserializer.cs">
+      <Link>Serialization\StringDeserializer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Serialization\StringSerializer.cs">
+      <Link>Serialization\StringSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\Timestamp.cs">
+      <Link>Timestamp.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\TimestampType.cs">
+      <Link>TimestampType.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\TopicMetadata.cs">
+      <Link>TopicMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\TopicPartition.cs">
+      <Link>TopicPartition.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\TopicPartitionOffset.cs">
+      <Link>TopicPartitionOffset.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\TopicPartitionOffsetError.cs">
+      <Link>TopicPartitionOffsetError.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Confluent.Kafka\WatermarkOffsets.cs">
+      <Link>WatermarkOffsets.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\librdkafka.redist.0.9.4\build\librdkafka.redist.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\librdkafka.redist.0.9.4\build\librdkafka.redist.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

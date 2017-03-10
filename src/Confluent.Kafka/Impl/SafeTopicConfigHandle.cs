@@ -72,8 +72,13 @@ namespace Confluent.Kafka.Impl
                 var dict = new Dictionary<string, string>();
                 for (int i = 0; i < (int) cntp / 2; i++)
                 {
+#if fx45
+                    dict.Add(Util.Marshal.PtrToStringUTF8(Marshal.ReadIntPtr(data, 2 * i * Util.Marshal.SizeOf<IntPtr>())),
+                             Util.Marshal.PtrToStringUTF8(Marshal.ReadIntPtr(data, (2 * i + 1) * Util.Marshal.SizeOf<IntPtr>())));
+#else
                     dict.Add(Util.Marshal.PtrToStringUTF8(Marshal.ReadIntPtr(data, 2 * i * Marshal.SizeOf<IntPtr>())),
                              Util.Marshal.PtrToStringUTF8(Marshal.ReadIntPtr(data, (2 * i + 1) * Marshal.SizeOf<IntPtr>())));
+#endif
                 }
                 // Filter out callback pointers
                 return dict.Where(kv => !kv.Key.EndsWith("_cb")).ToDictionary(kv => kv.Key, kv => kv.Value);
