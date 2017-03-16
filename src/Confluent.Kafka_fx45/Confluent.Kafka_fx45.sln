@@ -5,6 +5,12 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confluent.Kafka_fx45", "Confluent.Kafka_fx45\Confluent.Kafka_fx45.csproj", "{C7E2A319-80F1-4CA4-8347-E6D153E78437}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{11104BB1-0F63-426B-8DBC-FF272F826FD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosumerConsole", "CosumerConsole\CosumerConsole.csproj", "{AEF97479-8154-4D8E-AA89-3160C12233A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProduceConsole", "ProduceConsole\ProduceConsole.csproj", "{EF190C3F-C48C-4802-8287-1E793B4C900E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +21,20 @@ Global
 		{C7E2A319-80F1-4CA4-8347-E6D153E78437}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7E2A319-80F1-4CA4-8347-E6D153E78437}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7E2A319-80F1-4CA4-8347-E6D153E78437}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEF97479-8154-4D8E-AA89-3160C12233A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEF97479-8154-4D8E-AA89-3160C12233A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEF97479-8154-4D8E-AA89-3160C12233A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEF97479-8154-4D8E-AA89-3160C12233A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF190C3F-C48C-4802-8287-1E793B4C900E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF190C3F-C48C-4802-8287-1E793B4C900E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF190C3F-C48C-4802-8287-1E793B4C900E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF190C3F-C48C-4802-8287-1E793B4C900E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AEF97479-8154-4D8E-AA89-3160C12233A3} = {11104BB1-0F63-426B-8DBC-FF272F826FD1}
+		{EF190C3F-C48C-4802-8287-1E793B4C900E} = {11104BB1-0F63-426B-8DBC-FF272F826FD1}
 	EndGlobalSection
 EndGlobal
